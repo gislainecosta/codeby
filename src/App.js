@@ -1,22 +1,45 @@
 import './App.css';
+import { Provider } from 'react-redux';
+import store from './store.tsx';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Header from './components/Header.tsx'
+import Home from './pages/Home.tsx';
+import Cart from './pages/Cart.tsx';
+
+
+const routes = [
+  {
+    path: '/',
+    component: <Home />
+  },
+  {
+    path: '/carrinho',
+    component: <Cart />
+  }
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className='container'>
+        <div className='app'>
+          <BrowserRouter>
+            <Header />
+            <Switch>
+              {
+                routes.map(
+                  (route) => {
+                    return <Route key={route.path} exact path={route.path}>
+                      {route.component}
+                    </Route>;
+                  }
+                )
+              }
+            </Switch>
+          </BrowserRouter>
+        </div>
+      </div>
+    </Provider>
   );
 }
 
