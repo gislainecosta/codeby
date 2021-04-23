@@ -1,6 +1,6 @@
 import './App.css';
 import { Provider } from 'react-redux';
-import store from './store.js';
+import store from './utils/store';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/Header.tsx'
 import Home from './pages/Home.tsx';

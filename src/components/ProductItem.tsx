@@ -1,10 +1,11 @@
 import { useDispatch } from 'react-redux';
+import { formatCurrency } from '../utils/functions';
 
 interface ProductDetail {
     image: string,
     name: string,
-    originalPrice: string,
-    actualPrice: string,
+    originalPrice: number,
+    actualPrice: number,
     id: string
 }
 
@@ -12,7 +13,16 @@ export default function ProductItem(props: ProductDetail) {
     const dispatch = useDispatch();
 
     const addCart = () => {
-        dispatch({ type: 'ADD_CART', payload: props.id });
+        const payload = {
+            image: props.image,
+            name: props.name,
+            originalPrice:props.originalPrice,
+            actualPrice: props.actualPrice,
+            id: props.id,
+            amount: 1
+        }
+        
+        dispatch({ type: 'ADD_CART', payload });
     }
 
     return (
@@ -24,8 +34,8 @@ export default function ProductItem(props: ProductDetail) {
             <div>
                 <div className='productDetail'>
                     <p>{props.name}</p>
-                    <p>R$ {props.originalPrice}</p>
-                    <p>R$ {props.actualPrice}</p>
+                    <p>{formatCurrency(props.originalPrice)}</p>
+                    <p>{formatCurrency(props.actualPrice)}</p>
                 </div>
                 <button onClick={addCart}>Add CArt</button>
             </div>

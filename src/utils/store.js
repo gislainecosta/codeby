@@ -1,29 +1,32 @@
 import { createStore } from 'redux';
 
-const products = require('./db/products.json');
+const products = require('../db/products.json');
 
 const initialState = {
     products: products.items,
-    cart: []
+    cart: [
+    ]
 };
 
 
 function cartActions(state = initialState, action) {
     switch (action.type) {
         case 'ADD_CART':
+            console.log('CARRINHO', state.cart)
             const newProduct = action.payload;
             const productIndex = state.cart.findIndex((product) => {
-                return product.productId === newProduct.productId;
+                return product.id === newProduct.id;
             });
 
             let newCart;
             if (productIndex === -1) {
-                newCart = [...state.cart, { ...newProduct, quantity: 1 }];
+                newCart = [...state.cart, newProduct];
             } else {
                 alert('O produto já está no  carrinho')
+                newCart = [...state.cart]
             }
-
-            return { ...state, cart: [...state.cart, newCart] }
+            console.log(newCart)
+            return { ...state, cart: newCart }
         default:
             return state;
     }

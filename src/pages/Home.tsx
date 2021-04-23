@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import  '../styles/Home.css';
-
 import { useSelector } from 'react-redux';
-
-import ProductItem from '../components/ProductItem'
+import ProductItem from '../components/ProductItem';
+import { formatPrice } from './../utils/functions';
 
 export default function Home() {
     const [productsList, setProductsList] = useState<any>([])
@@ -17,8 +16,8 @@ export default function Home() {
                     key={product.productId}
                     image={product.imageUrl}
                     name={product.name}
-                    originalPrice={product.price}
-                    actualPrice={product.sellingPrice}
+                    originalPrice={formatPrice(product.price)}
+                    actualPrice={formatPrice(product.sellingPrice)}
                     id={product.productId}
                 />
             })
@@ -26,6 +25,8 @@ export default function Home() {
 
         setProductsList(show)
     }, [products])
+
+    console.log(products)
 
     return (
         <div className='home'>

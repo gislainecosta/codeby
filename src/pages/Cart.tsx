@@ -14,12 +14,6 @@ export default function Cart() {
         total >= 10 ? setShippingFree(true) : setShippingFree(false)
     }, [totalPrice])
 
-    console.log(cartItems)
-
-    const mostra = () => {
-        console.log('CHAMOU BOTÃO', cartItems)
-    }
-
     return (
         <div className='cart'>
             <header className='header'>
@@ -34,12 +28,11 @@ export default function Cart() {
                             cartItems.map((product:any) => {
                                 return <CartItem
                                     key={product.id}
-                                    image={product.photo}
+                                    image={product.image}
                                     name={product.name}
                                     originalPrice={product.originalPrice}
                                     actualPrice={product.actualPrice}
                                     id={product.id}
-                                    amount={product.amount}
                                 />
                             })
                     }
@@ -47,8 +40,6 @@ export default function Cart() {
                 <section className='totalPrice'>
                     <span>Total</span>
                     <span>R$ {totalPrice}</span>
-
-                    <button onClick={mostra}>Carrinho</button>
                     {
                         shippngFree &&
                         <p>Parabéns, sua compra tem frete grátis!</p>
