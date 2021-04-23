@@ -1,4 +1,4 @@
-import '../styles/CartItem.css'; 
+import '../styles/Product.css'; 
 import { useDispatch } from 'react-redux';
 import { formatCurrency } from '../utils/functions';
 
@@ -23,7 +23,7 @@ export default function CartItem(props: ProductDetail) {
     }
     
     return (
-        <div className='cartItem'>
+        <div className='productItem'>
             <div className='productImage'>
                 <img src={props.image} alt='Imagem do Produto' />
             </div>

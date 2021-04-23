@@ -11,3 +11,24 @@
     color: var(--blue-dark);
     margin: 2% 0;
 }
+
+
+.button-cart {
+  background-color: var(--blue);
+  color: white;
+  border-radius: 5px;
+  margin: 3% 0 5% 0;
+  font-weight: 900;
+  font-size: 1.2rem;
+  height: 50px;
+  width: 280px;
+}
+
+.button-cart:hover {
+  background-color: var(--blue-dark);
+  transform: scale(1.01);
+}
+
+.button-cart:active {
+  transform: scale(0.99);
+}

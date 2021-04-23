@@ -24,12 +24,10 @@ export default function Cart() {
 
     return (
         <div className='cart'>
-            <header className='header'>
-                <h2>Meu Carrinho</h2>
-            </header>
+            <h2>Meu Carrinho</h2>
 
             <main>
-                <section className='cartItems'>
+                <section>
                     {
                         cartItems === undefined ?
                             <p>Carrinho Vazio</p> :
@@ -58,7 +56,7 @@ export default function Cart() {
             <footer>
                 <button
                     onClick={checkout}
-                    className='buttonBuy'
+                    className='button-checkout'
                 >
                     Finalizar Compra
                     </button>
