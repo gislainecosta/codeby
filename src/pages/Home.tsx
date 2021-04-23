@@ -26,8 +26,6 @@ export default function Home() {
         setProductsList(show)
     }, [products])
 
-    console.log(products)
-
     return (
         <div className='home'>
             <main>

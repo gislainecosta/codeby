@@ -1,18 +1,26 @@
 import { useEffect, useState } from 'react'
 import '../styles/Cart.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import CartItem from '../components/CartItem';
+import { formatCurrency } from '../utils/functions';
 
 export default function Cart() {
-    const [totalPrice, setTotalPrice] = useState<string>('35,00');
+    let history = useHistory();
+    const dispatch = useDispatch();
     const [shippngFree, setShippingFree] = useState<boolean>(false);
     const cartItems = useSelector((state: any) => state.cart);
+    const total = useSelector((state: any) => state.totalCart);
 
     useEffect(() => {
-        const total = Number(totalPrice.replace(',', '.'))
         total >= 10 ? setShippingFree(true) : setShippingFree(false)
-    }, [totalPrice])
+    }, [total])
+
+    const checkout = () => {
+        dispatch({ type: 'CLEAR_CART', payload: '' });
+        history.push('finalizar-compra')
+    }
 
     return (
         <div className='cart'>
@@ -25,7 +33,7 @@ export default function Cart() {
                     {
                         cartItems === undefined ?
                             <p>Carrinho Vazio</p> :
-                            cartItems.map((product:any) => {
+                            cartItems.map((product: any) => {
                                 return <CartItem
                                     key={product.id}
                                     image={product.image}
@@ -39,7 +47,7 @@ export default function Cart() {
                 </section>
                 <section className='totalPrice'>
                     <span>Total</span>
-                    <span>R$ {totalPrice}</span>
+                    <span>{formatCurrency(total)}</span>
                     {
                         shippngFree &&
                         <p>Parabéns, sua compra tem frete grátis!</p>
@@ -48,7 +56,12 @@ export default function Cart() {
             </main>
 
             <footer>
-                <button className='buttonBuy'>Finalizar Compra</button>
+                <button
+                    onClick={checkout}
+                    className='buttonBuy'
+                >
+                    Finalizar Compra
+                    </button>
             </footer>
         </div>
     )
