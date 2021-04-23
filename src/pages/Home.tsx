@@ -3,13 +3,15 @@ import  '../styles/Home.css';
 import { useSelector } from 'react-redux';
 import ProductItem from '../components/ProductItem';
 import { formatPrice } from './../utils/functions';
+import { useHistory } from 'react-router-dom';
 
 export default function Home() {
+    let history = useHistory();
     const [productsList, setProductsList] = useState<any>([])
     const products = useSelector((state: any) => state.products);
 
     useEffect(() => {
-        let show = <p>Carregando Produtos</p>
+        let show;
         if (products !== undefined) {
             show = products.map((product:any) => {
                 return <ProductItem
@@ -26,15 +28,25 @@ export default function Home() {
         setProductsList(show)
     }, [products])
 
+    const goToCart = () => {
+        history.push('carrinho')
+    }
+
     return (
         <div className='home'>
+            <h2>Escolha as suas Trufas</h2>
+            
             <main>
-                <h2>Escolha as suas Trufas</h2>
                 {productsList}
             </main>
 
             <footer>
-
+                <button
+                    onClick={goToCart}
+                    className='button-cart'
+                >
+                    Ir para o Carinho
+                    </button>
             </footer>
         </div>
     )
