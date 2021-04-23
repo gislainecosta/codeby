@@ -1,10 +1,11 @@
 import './App.css';
 import { Provider } from 'react-redux';
-import store from './store.tsx';
+import store from './utils/store';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/Header.tsx'
 import Home from './pages/Home.tsx';
 import Cart from './pages/Cart.tsx';
+import Checkout from './pages/Checkout.tsx'
 
 
 const routes = [
@@ -15,6 +16,10 @@ const routes = [
   {
     path: '/carrinho',
     component: <Cart />
+  },
+  {
+    path: '/finalizar-compra',
+    component: <Checkout />
   }
 ];
 

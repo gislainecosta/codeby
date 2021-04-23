@@ -7,7 +7,7 @@ const Header = () => {
     let history = useHistory()
 
     const goToPage = (page: string) => {
-        history.replace(`${page}`)
+        history.push(`${page}`)
     }
 
     return (
