@@ -1,0 +1,79 @@
+(7) [
+    {…
+    },
+    {…
+    },
+    {…
+    },
+    {…
+    },
+    {…
+    },
+    {…
+    },
+    {…
+    }
+]
+0:
+additionalInfo: {brandName: "Codeby", brandId: "2000004", offeringInfo: null, offeringType: null, offeringTypeId: null
+}
+assemblies: []
+attachmentOfferings: []
+attachments: []
+availability: "available"
+bundleItems: []
+components: []
+detailUrl: "/trufa-bendito-cacau-55-/p"
+ean: "223311"
+id: "16701615"
+imageUrl: "http://codeby.vteximg.com.br/arquivos/ids/159959-800-1029/truffon-meio-amargo.png?v=636930938547630000"
+isGift: false
+listPrice: 303
+manualPrice: null
+manufacturerCode: null
+measurementUnit: "un"
+modalType: null
+name: "Trufa BENDITO CACAU 55% CACAU 30 G"
+offerings: []
+parentAssemblyBinding: null
+parentItemIndex: null
+preSaleDate: null
+price: 303
+priceTags: [
+    {…
+    }
+]
+priceValidUntil: "2020-12-01T02:30:00Z"
+productCategories: {
+    29: "trufas"
+}
+productCategoryIds: "/29/"
+productId: "317"
+productRefId: null
+quantity: 1
+refId: null
+rewardValue: 0
+seller: "1"
+sellerChain: [
+    "1"
+]
+sellingPrice: 273
+skuName: "30 G"
+tax: 0
+uniqueId: "6EA48CF66F6349648018C322C5560FA8"
+unitMultiplier: 1
+__proto__: Object
+1: {uniqueId: "33DEE4CA67A14A4D914C6FFCE698281F", id: "16701612", productId: "314", productRefId: null, refId: null, …
+}
+2: {uniqueId: "BF99659671134B10BD20343AE9ECF12F", id: "16701610", productId: "312", productRefId: null, refId: null, …
+}
+3: {uniqueId: "CB9786BD499A475C815DC0E868CCCDE3", id: "16701618", productId: "318", productRefId: null, refId: null, …
+}
+4: {uniqueId: "73C3840DFE124A778B3A1F7826D58172", id: "16701609", productId: "311", productRefId: null, refId: null, …
+}
+5: {uniqueId: "822C1AC05E674B21B2D16137AE235AD1", id: "16701611", productId: "313", productRefId: null, refId: null, …
+}
+6: {uniqueId: "0C11A2FE262A481A9A58FB7C0E977662", id: "16701608", productId: "310", productRefId: null, refId: null, …
+}
+length: 7
+__proto__: Array(0)
