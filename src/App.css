@@ -18,7 +18,7 @@
   width: 360px;
   min-height: 97vh;
   box-shadow: 2px 2px 12px 0px rgba(50, 50, 50, 0.39);
-  overflow: hidden;
+  
 }
 
 @media(max-width: 900px) {
@@ -26,9 +26,11 @@
     background-color: white;
     padding: 0;
   }
+  
   .app {
     width: 100vw;
     min-height: 100vh;
     border-radius: 0px;
+    overflow: hidden !important;
   }
 }

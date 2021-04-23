@@ -11,7 +11,7 @@ export default function Home() {
     const products = useSelector((state: any) => state.products);
 
     useEffect(() => {
-        let show = <p>Carregando Produtos</p>
+        let show;
         if (products !== undefined) {
             show = products.map((product:any) => {
                 return <ProductItem

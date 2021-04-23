@@ -1,7 +1,7 @@
 import '../styles/Product.css';
 import { useDispatch } from 'react-redux';
 import { formatCurrency } from '../utils/functions';
-import AddCart from '../images/add-cart.png'
+import AddCart from '../images/add-cart.png';
 
 interface ProductDetail {
     image: string,
@@ -39,7 +39,7 @@ export default function ProductItem(props: ProductDetail) {
                 <p>{formatCurrency(props.actualPrice)}</p>
             </div>
 
-            <img src={AddCart} onClick={addCart} alt='Aadicionar ao CArrinho' />
+            <img src={AddCart} onClick={addCart} alt='Adicionar ao CArrinho' />
         </div>
     )
 }

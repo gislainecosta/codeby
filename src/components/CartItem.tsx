@@ -1,6 +1,7 @@
 import '../styles/Product.css'; 
 import { useDispatch } from 'react-redux';
 import { formatCurrency } from '../utils/functions';
+import Trash from '../images/trash.png'
 
 interface ProductDetail {
     image: string,
@@ -34,7 +35,7 @@ export default function CartItem(props: ProductDetail) {
                 <p>{formatCurrency(props.actualPrice)}</p>
             </div>
 
-            <button onClick={removeCart}>Excluir</button>
+            <img src={Trash} onClick={removeCart} alt='Remover do CArrinho' />
         </div>
     )
 }
